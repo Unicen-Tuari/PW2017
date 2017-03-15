@@ -1,6 +1,6 @@
 <?php
-$i = 0;
-for(;$i <= 10; $i++)
-	echo $i;
+
+$i = 30;
+for(;$i < 50; $i++)
 echo "Facu es un capo";
 ?>
