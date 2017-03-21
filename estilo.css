@@ -1,3 +1,12 @@
+body {
+  background-color: rgb(255,255,0);
+
+}
+
+h1
+{
+  text-decoration:line-through;
+}
 p
 {
   color:red;
@@ -6,4 +15,9 @@ p
 .verde
 {
   color:green;
+  font-size: 40px;
+}
+
+#pimportante {
+  color: blue;
 }
