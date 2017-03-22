@@ -23,15 +23,15 @@ p
 }
 
 .lista-gato {
-  list-style-image: url('iconogato.png');
+  list-style-image: url('imagenes/iconogato.png');
 }
 
 #panda {
-  list-style-image: url('pandaico.png');
+  list-style-image: url('imagenes/pandaico.png');
 }
 
 ul {
-  list-style-image: url('pandaico.png');
+  list-style-image: url('imagenes/pandaico.png');
 }
 
 .lista-rojo {
