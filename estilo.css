@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(255,255,0);
+
 
 }
 
@@ -20,4 +20,61 @@ p
 
 #pimportante {
   color: blue;
+}
+
+.lista-gato {
+  list-style-image: url('iconogato.png');
+}
+
+#panda {
+  list-style-image: url('pandaico.png');
+}
+
+ul {
+  list-style-image: url('pandaico.png');
+}
+
+.lista-rojo {
+  background-color: red;
+}
+
+ol {
+ list-style-type: armenian;
+}
+
+.listas {
+  background-color: violet;
+  border-style: solid;
+  border-color: white;
+}
+
+.resaltado{
+  background-color: violet;
+}
+
+.negrita {
+  font-weight: bold;
+  font-style: italic;
+  background-color: green;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table, td, th{
+  border: 1px solid;
+}
+
+th {
+  color: blue;
+  border-color: black;
+}
+
+tbody {
+font-style: italic;
+}
+
+input, textarea {
+  color:red;
 }
