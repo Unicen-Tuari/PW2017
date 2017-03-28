@@ -3,7 +3,7 @@ body {
 
 }
 
-h1
+h1, h2, h3, h4, h5, h6
 {
   text-decoration:line-through;
 }
@@ -46,6 +46,14 @@ ol {
   background-color: violet;
   border-style: solid;
   border-color: white;
+  color: white;
+}
+
+body{
+  color: cyan;
+}
+ol {
+  background-color: inherit;
 }
 
 .resaltado{
@@ -104,6 +112,7 @@ input[type=checkbox]:checked{
   background-color: red;
 }
 
+
 .letraCapital::first-letter {
   color: #008;
   background-color: #aaa;
@@ -115,4 +124,15 @@ a:visited{
 a:hover {
   color: #008;
   background-color: #aaa;
+}
+
+nav ul li a {
+  text-decoration: none;
+}
+nav ul {
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
 }
