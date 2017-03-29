@@ -1,0 +1,9 @@
+nav ul li {
+  display: inline;
+
+}
+
+nav {
+  background-color: pink;
+  text-align: center;
+}

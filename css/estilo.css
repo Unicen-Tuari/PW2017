@@ -1,0 +1,138 @@
+body {
+
+
+}
+
+h1, h2, h3, h4, h5, h6
+{
+  text-decoration:line-through;
+}
+p
+{
+  color:red;
+}
+
+.verde
+{
+  color:green;
+  font-size: 40px;
+}
+
+#pimportante {
+  color: blue;
+}
+
+.lista-gato {
+  list-style-image: url('imagenes/iconogato.png');
+}
+
+#panda {
+  list-style-image: url('imagenes/pandaico.png');
+}
+
+ul {
+  list-style-image: url('imagenes/pandaico.png');
+}
+
+.lista-rojo {
+  background-color: red;
+}
+
+ol {
+ list-style-type: armenian;
+}
+
+.listas {
+  background-color: violet;
+  border-style: solid;
+  border-color: white;
+  color: white;
+}
+
+body{
+  color: cyan;
+}
+ol {
+  background-color: inherit;
+}
+
+.resaltado{
+  background-color: violet;
+}
+
+.negrita {
+  font-weight: bold;
+  font-style: italic;
+  background-color: green;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table, td, th{
+  border: 1px solid;
+}
+
+th {
+  color: blue;
+  border-color: black;
+}
+
+tbody {
+font-style: italic;
+}
+
+input, textarea {
+  color:red;
+}
+
+input[type=checkbox] {
+  padding-left:5px;
+  padding-right:5px;
+  border-radius:15px;
+  -webkit-appearance:button;
+  border: double 2px #00F;
+  background-color:#0b0095;
+  color:#FFF;
+  white-space: nowrap;
+  overflow:hidden;
+  width:15px;
+  height:15px;
+  width: 50px;
+  color: black;
+}
+
+input[type=checkbox]:checked{
+  background-color: green;
+}
+
+.letraCapital::selection{
+  color:white;
+  background-color: red;
+}
+
+
+.letraCapital::first-letter {
+  color: #008;
+  background-color: #aaa;
+}
+
+a:visited{
+  color:orange;
+}
+a:hover {
+  color: #008;
+  background-color: #aaa;
+}
+
+nav ul li a {
+  text-decoration: none;
+}
+nav ul {
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+}
