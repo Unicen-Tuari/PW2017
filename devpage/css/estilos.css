@@ -12,6 +12,6 @@ nav {
   background-color: pink;
 }
 
-.tituloArt{
-  color:white;
+article.introduccion h1{
+  color: white;
 }
