@@ -1,0 +1,24 @@
+.principal{
+  border-style: solid;
+  border-color: red;
+  padding: 10%;
+  height:  95%;
+}
+
+.secundario{
+  border-style: groove;
+  border-radius: 6%;
+  border-color: blue;
+  width: 65%;
+}
+
+.tercero{
+  border-color:#05D;
+  border-style: double;
+  width: 80%;
+}
+
+.tercero img{
+  height: 50%;
+  width: 50%;
+}
