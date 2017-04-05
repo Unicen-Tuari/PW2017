@@ -1,0 +1,17 @@
+.primero{
+  border-left: 40px;
+  border-color: blue;
+}
+.hijo{
+  border-right: 30px;
+  border-color: red;
+}
+.segundo{
+  border-color: orange;
+}
+h1{
+color: violet;
+}
+p{
+  color: yellow;
+}
