@@ -1,0 +1,32 @@
+.encabezado {
+  background-color: lightgrey;
+  height: 50px;
+}
+.contenedor {
+  position: relative;
+  border: 2px solid red;
+}
+.izquierda{
+  background-color: darkgrey;
+  width: 60%;
+  height: 1200px;
+  z-index: 13;
+}
+.derecha{
+  z-index: 01;
+  background-color: grey;
+  width: 40%;
+  height: 200px;
+  position: absolute;
+  top: 50px;
+  left: 40%;
+}
+span{
+  position: relative;
+  top: 0.5em;
+  font-size: 2em;
+}
+.pie {
+  background-color: lightblue;
+  height: 50px;
+}

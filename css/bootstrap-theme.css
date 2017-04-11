@@ -1,0 +1,8 @@
+.navbar-default{
+  background-color: red;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+  background-color: darkred;
+  color: yellow;
+}
