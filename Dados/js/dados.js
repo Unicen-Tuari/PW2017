@@ -1,1 +1,3 @@
-alert("Hola");
+function tirarDados() {
+  alert("Tiro dados");
+}
