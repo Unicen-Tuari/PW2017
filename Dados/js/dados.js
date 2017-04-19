@@ -2,6 +2,7 @@
 
 let resultados = [0,0,0,0,0,0,0,0,0,0,0];
 const tds = document.querySelectorAll('#resultado td');
+const veces = document.getElementById('veces');
 const caras = 6;
 
 function obtenerValor(){
@@ -20,6 +21,13 @@ function tirarDados() {
   resultados[resultado - 2] += 1;
   console.log(resultados);
   mostrarResultados(resultados);
+}
+
+function tirarXVeces(cantidad) {
+    let v = (cantidad === undefined) ? veces.value : cantidad;
+    for (var i = 0; i < v; i++) {
+      tirarDados();
+    }
 }
 
 function mostrarResultados(resultados) {
