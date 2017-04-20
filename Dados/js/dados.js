@@ -4,6 +4,7 @@ let resultados = [0,0,0,0,0,0,0,0,0,0,0];
 const tds = document.querySelectorAll('#resultado td');
 const veces = document.getElementById('veces');
 const caras = 6;
+let timer;
 
 function obtenerValor(){
   return Math.floor(Math.random() * caras + 1);
@@ -35,3 +36,25 @@ function mostrarResultados(resultados) {
     tds[i].innerHTML = resultados[i];
   }
 }
+
+function jugar(){
+  if(timer === undefined){
+    timer = setInterval(tirarDados,1000);
+    document.getElementById('jugar').innerHTML = "Parar";
+  }
+  else{
+    clearInterval(timer);
+    document.getElementById('jugar').innerHTML = "Jugar";
+  }
+}
+
+let tirarDadosBtn = document.getElementById('tirar-dados');
+tirarDadosBtn.addEventListener("click", tirarDados);
+
+let jugarBtn = document.getElementById('jugar');
+jugarBtn.addEventListener("click", jugar);
+
+let tirarXVecesBtn = document.getElementById('tirar-x-veces');
+tirarXVecesBtn.addEventListener("click", function(){ tirarXVeces(); });
+let tirar1000VecesBtn = document.getElementById('tirar-1000-veces');
+tirar1000VecesBtn.addEventListener("click", function(){ tirarXVeces(1000);});
