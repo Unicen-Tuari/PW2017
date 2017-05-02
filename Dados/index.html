@@ -12,9 +12,11 @@
 		<p>
 			<img id="segundoDado" src="images/dado1.png"/>
 		</p>
-		<button onclick="tirarDados()">Tirar Dados</button>
-		<button >Tirar 1000 Dados</button>
-		<button >Jugar</button>
+		<button id="tirar-dados">Tirar Dados</button>
+		<button id="tirar-1000-veces" >Tirar 1000 Dados</button>
+		<input type="number" name="veces" id="veces" value="1000">
+		<button id="tirar-x-veces">Tirar X Dados</button>
+		<button id="jugar" >Jugar</button>
 	</div>
 	<div>
 		<table>
@@ -35,9 +37,19 @@
 			</thead>
 			<tbody>
 				<tr id="resultado">
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
 				</tr>
 			</tbody>
-
 		</table>
 	</div>
 	<script type="text/javascript" src="js/dados.js"></script>
