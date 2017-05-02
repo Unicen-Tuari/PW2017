@@ -22,7 +22,7 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a href="#">Agregar</a></li>
+            <li><a href="#">-</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
@@ -34,5 +34,24 @@
       <li class="list-group-item">Porta ac consectetur ac</li>
       <li class="list-group-item">Vestibulum at eros</li>
     </ul>
+    <form class="form-horizontal" action="insertar_tarea.php" method="post">
+      <div class="form-group">
+        <label class="col-sm-2 control-label">Nombre</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" placeholder="Nombre">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inputDescripcion" class="col-sm-2 control-label">Descripción</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="inputDescripcion" placeholder="Descripción">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" class="btn btn-default">Enviar</button>
+        </div>
+      </div>
+    </form>
   </body>
 </html>
