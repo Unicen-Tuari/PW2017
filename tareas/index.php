@@ -40,13 +40,16 @@
         $claseTerminada = '';
         if($fila["terminada"])
           $claseTerminada = 'finished';
-        echo '<li class="list-group-item '.$claseTerminada.'" >';
-
-        echo        $fila['nombre'].': '.
-                $fila['descripcion'].': '.
-                '<a href="borrar_tarea.php?id_tarea='.$fila['id_tarea'].'">Borrar</a> '.
-                '<a href="terminar_tarea.php?id_tarea='.$fila['id_tarea'].'">Terminada</a>';
-        echo      '</li>';
+          ?>
+          <li class="list-group-item  <?php echo $claseTerminada?>" >
+       <?php
+          echo        $fila['nombre'].': '.
+                  $fila['descripcion'].': ';
+        ?>
+               <a href="borrar_tarea.php?id_tarea=<?php echo $fila['id_tarea']?>">Borrar</a>
+              <a href="terminar_tarea.php?id_tarea=<?php echo $fila['id_tarea']?>">Terminada</a>
+        </li>
+        <?php
       }
       ?>
     </ul>
