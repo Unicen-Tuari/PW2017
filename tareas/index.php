@@ -36,11 +36,17 @@
       <?php
       foreach ($tareas  as $fila)
       {
-        echo '<li class="list-group-item">'.
-                $fila['nombre'].': '.
+        echo '<li class="list-group-item" >';
+        if($fila["terminada"])
+          echo "<s>";
+
+        echo        $fila['nombre'].': '.
                 $fila['descripcion'].': '.
-                '<a href="borrar_tarea.php?id_tarea='.$fila['id_tarea'].'">Borrar</a>'.
-              '</li>';
+                '<a href="borrar_tarea.php?id_tarea='.$fila['id_tarea'].'">Borrar</a> '.
+                '<a href="terminar_tarea.php?id_tarea='.$fila['id_tarea'].'">Terminada</a>';
+        if($fila["terminada"])
+          echo "</s>";
+        echo      '</li>';
       }
       ?>
     </ul>
