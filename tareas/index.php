@@ -38,7 +38,8 @@
       {
         echo '<li class="list-group-item">'.
                 $fila['nombre'].': '.
-                $fila['descripcion'].
+                $fila['descripcion'].': '.
+                '<a href="borrar_tarea.php?id_tarea='.$fila['id_tarea'].'">Borrar</a>'.
               '</li>';
       }
       ?>

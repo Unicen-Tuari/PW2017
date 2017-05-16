@@ -21,4 +21,10 @@
     $result = $consulta->execute();
     return $consulta->fetchAll();
   }
+  function BorrarTarea($id_tarea)
+  {
+    $db = Conectar();
+    $sentencia = $db->prepare("delete from tarea where id_tarea=?");
+    $sentencia->execute(array($id_tarea));
+  }
 ?>
