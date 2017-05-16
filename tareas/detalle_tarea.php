@@ -1,6 +1,9 @@
 <?php
   require_once('bbdd.php');
-  $tareas = GetTareas();
+  if(isset($_GET["id_tarea"])){
+    $id_tarea = $_GET["id_tarea"];
+    $fila = GetTarea($id_tarea);
+  }
  ?>
 <!DOCTYPE html>
 <html>
@@ -33,44 +36,22 @@
       </div><!-- /.container-fluid -->
     </nav>
 
-    <ul class="list-group">
-      <?php
-      foreach ($tareas  as $fila)
-      {
+  <?php
         $claseTerminada = '';
         if($fila["terminada"])
           $claseTerminada = 'finished';
-          ?>
-          <li class="list-group-item  <?php echo $claseTerminada?>" >
-       <?php
-          echo        $fila['nombre'];
-        ?>
-               <a href="borrar_tarea.php?id_tarea=<?php echo $fila['id_tarea']?>">Borrar</a>
-              <a href="terminar_tarea.php?id_tarea=<?php echo $fila['id_tarea']?>">Terminada</a>
-              <a href="detalle_tarea.php?id_tarea=<?php echo $fila['id_tarea']?>">Ver detalles</a>
-        </li>
-        <?php
-      }
       ?>
-    </ul>
-    <form class="form-horizontal" action="insertar_tarea.php" method="post">
-      <div class="form-group">
-        <label class="col-sm-2 control-label">Nombre</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" name="nombre" placeholder="Nombre">
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="inputDescripcion" class="col-sm-2 control-label">Descripción</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control" name="descripcion" id="inputDescripcion" placeholder="Descripción">
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-          <button type="submit" class="btn btn-default">Enviar</button>
-        </div>
-      </div>
-    </form>
+
+       <?php
+          echo        "<h1>".$fila['nombre']."</h1>";
+        ?>
+
+       <?php
+          echo        $fila['descripcion'];
+        ?>
+
+        <?php
+
+      ?>
   </body>
 </html>

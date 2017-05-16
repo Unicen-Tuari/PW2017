@@ -21,6 +21,14 @@
     $result = $consulta->execute();
     return $consulta->fetchAll();
   }
+  function GetTarea($id_tarea)
+  {
+    $db = Conectar();
+    $consulta = $db->prepare("SELECT * FROM tarea WHERE id_tarea = ?");
+    $result = $consulta->execute(array($id_tarea));
+    //Devuelvo una sola porque el WHERE es por la clave primaria
+    return $consulta->fetch();
+  }
   function BorrarTarea($id_tarea)
   {
     $db = Conectar();
