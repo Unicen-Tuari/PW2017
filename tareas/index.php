@@ -8,6 +8,7 @@
     <meta charset="utf-8">
     <title>Lista tareas</title>
     <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/estilo.css">
   </head>
   <body>
     <nav class="navbar navbar-default">
@@ -36,16 +37,15 @@
       <?php
       foreach ($tareas  as $fila)
       {
-        echo '<li class="list-group-item" >';
+        $claseTerminada = '';
         if($fila["terminada"])
-          echo "<s>";
+          $claseTerminada = 'finished';
+        echo '<li class="list-group-item '.$claseTerminada.'" >';
 
         echo        $fila['nombre'].': '.
                 $fila['descripcion'].': '.
                 '<a href="borrar_tarea.php?id_tarea='.$fila['id_tarea'].'">Borrar</a> '.
                 '<a href="terminar_tarea.php?id_tarea='.$fila['id_tarea'].'">Terminada</a>';
-        if($fila["terminada"])
-          echo "</s>";
         echo      '</li>';
       }
       ?>
