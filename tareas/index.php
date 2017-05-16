@@ -1,3 +1,7 @@
+<?php
+  require_once('bbdd.php');
+  $tareas = GetTareas();
+ ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -27,24 +31,29 @@
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
+
     <ul class="list-group">
-      <li class="list-group-item">Cras justo odio</li>
-      <li class="list-group-item">Dapibus ac facilisis in</li>
-      <li class="list-group-item">Morbi leo risus</li>
-      <li class="list-group-item">Porta ac consectetur ac</li>
-      <li class="list-group-item">Vestibulum at eros</li>
+      <?php
+      foreach ($tareas  as $fila)
+      {
+        echo '<li class="list-group-item">'.
+                $fila['nombre'].': '.
+                $fila['descripcion'].
+              '</li>';
+      }
+      ?>
     </ul>
     <form class="form-horizontal" action="insertar_tarea.php" method="post">
       <div class="form-group">
         <label class="col-sm-2 control-label">Nombre</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" placeholder="Nombre">
+          <input type="text" class="form-control" name="nombre" placeholder="Nombre">
         </div>
       </div>
       <div class="form-group">
         <label for="inputDescripcion" class="col-sm-2 control-label">Descripción</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="inputDescripcion" placeholder="Descripción">
+          <input type="text" class="form-control" name="descripcion" id="inputDescripcion" placeholder="Descripción">
         </div>
       </div>
       <div class="form-group">
