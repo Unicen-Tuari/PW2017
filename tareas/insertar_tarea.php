@@ -6,5 +6,5 @@
     $descripcion = $_POST["descripcion"];
     InsertarTarea($nombre, $descripcion);
   }
-  header('Location: index.php');
+  header('Location: index_tareas.php');
 ?>

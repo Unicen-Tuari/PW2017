@@ -4,5 +4,5 @@
     $id_tarea = $_GET["id_tarea"];
     TerminarTarea($id_tarea);
   }
-  header('Location: index.php');
+  header('Location: index_tareas.php');
 ?>
