@@ -44,6 +44,15 @@ class ControllerTareas
     }
     header('Location: index.php');
   }
+
+  public function TerminarTarea()
+  {
+    if(isset($_GET["id_tarea"])){
+      $id_tarea = $_GET["id_tarea"];
+      $this->modelo->TerminarTarea($id_tarea);
+    }
+    header('Location: index.php');
+  }
 }
 
 

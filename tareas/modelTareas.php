@@ -30,6 +30,12 @@ class ModelTareas
     $sentencia = $this->db->prepare("DELETE FROM tarea WHERE id_tarea=?");
     $sentencia->execute(array($id_tarea));
   }
+
+  function TerminarTarea($id_tarea)
+  {
+    $sentencia = $this->db->prepare("UPDATE tarea SET terminada=true WHERE id_tarea=?");
+    $sentencia->execute(array($id_tarea));
+  }
 }
 
  ?>
