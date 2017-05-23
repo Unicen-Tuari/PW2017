@@ -1,6 +1,7 @@
 <?php
-require_once('ViewTareas.php');
-require_once('ModelTareas.php');
+require_once('viewTareas.php');
+require_once('modelTareas.php');
+require_once('modelPalabrasProhibidas.php');
 
 class ControllerTareas
 {
@@ -27,14 +28,33 @@ class ControllerTareas
   }
 
   function InsertarTarea(){
+    $errores = array();
     //Chequea que tenga un nombre
     if(isset($_POST["nombre"]) && strlen(trim($_POST["nombre"])) > 0)
     {
       $nombre = $_POST["nombre"];
       $descripcion = $_POST["descripcion"];
-      $this->modelo->InsertarTarea($nombre, $descripcion);
+      if($this->ValidarPalabrasProhibidas($nombre, $descripcion))
+        $this->modelo->InsertarTarea($nombre, $descripcion);
+      else {
+        $errores[] = 'Hay una palabra prohibida';
+        echo $errores[0];
+      }
     }
-    header('Location: index.php');
+    //cambie el redirect por mostrar en esta misma pagina
+    $this->mostrarTareas();
+    //header('Location: index.php');
+  }
+
+  private function ValidarPalabrasProhibidas($nombre, $descripcion)
+  {
+    $modelo_prohibidas = new ModelPalabrasProhibidas();
+    $prohibidas = $modelo_prohibidas->GetPalabrasProhibidas();
+    foreach ($prohibidas as $prohibida) {
+      if(!(strpos($nombre, $prohibida)===false && strpos($descripcion, $prohibida)===false))
+        return false;
+    }
+    return true;
   }
 
   function BorrarTarea(){
