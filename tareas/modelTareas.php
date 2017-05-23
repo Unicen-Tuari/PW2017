@@ -15,6 +15,14 @@ class ModelTareas
     $result = $consulta->execute();
     return $consulta->fetchAll();
   }
+  function InsertarTarea($nombre, $descripcion)
+  {
+    $consulta = $this->db->prepare("INSERT INTO tarea (nombre, descripcion) ".
+                "VALUES (?,?)");
+    $result = $consulta->execute(array($nombre,$descripcion));
+    //muestra errores por pantalla
+    //var_dump($consulta->errorInfo());
+  }
 }
 
  ?>

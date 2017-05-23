@@ -25,6 +25,17 @@ class ControllerTareas
     }
     $this->vista->mostrarTareas("Lista de Tareas", $tareasAMostrar);
   }
+
+  function InsertarTarea(){
+    //Chequea que tenga un nombre
+    if(isset($_POST["nombre"]) && strlen(trim($_POST["nombre"])) > 0)
+    {
+      $nombre = $_POST["nombre"];
+      $descripcion = $_POST["descripcion"];
+      $this->modelo->InsertarTarea($nombre, $descripcion);
+    }
+    header('Location: index.php');
+  }
 }
 
 
