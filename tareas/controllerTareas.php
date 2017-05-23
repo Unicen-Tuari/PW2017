@@ -14,7 +14,7 @@ class ControllerTareas
       $this->modelo = new ModelTareas();
   }
 
-  function mostrarTareas(){
+  function mostrarTareas($errores){
     $tareas = $this->modelo->GetTareas();
     $tareasAMostrar = array();
     foreach ($tareas as $tarea) {
@@ -24,7 +24,7 @@ class ControllerTareas
           $tareasAMostrar[]= $tarea;
       }
     }
-    $this->vista->mostrarTareas("Lista de Tareas", $tareasAMostrar);
+    $this->vista->mostrarTareas("Lista de Tareas", $tareasAMostrar, $errores);
   }
 
   function InsertarTarea(){
@@ -38,11 +38,10 @@ class ControllerTareas
         $this->modelo->InsertarTarea($nombre, $descripcion);
       else {
         $errores[] = 'Hay una palabra prohibida';
-        echo $errores[0];
       }
     }
     //cambie el redirect por mostrar en esta misma pagina
-    $this->mostrarTareas();
+    $this->mostrarTareas($errores);
     //header('Location: index.php');
   }
 

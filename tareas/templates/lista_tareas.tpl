@@ -18,5 +18,6 @@
     </ul>
   </div>
 </div>
+{include file="lista_errores.tpl"}
 {include file="form_tarea.tpl"}
 {include file="footer.tpl"}

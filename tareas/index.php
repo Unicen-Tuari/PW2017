@@ -1,5 +1,5 @@
 <?php
   require_once('controllerTareas.php');
   $controllerTareas = new ControllerTareas();
-  $controllerTareas->mostrarTareas();
+  $controllerTareas->mostrarTareas(array());
  ?>
