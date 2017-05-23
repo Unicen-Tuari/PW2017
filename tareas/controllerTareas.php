@@ -53,6 +53,15 @@ class ControllerTareas
     }
     header('Location: index.php');
   }
+
+  public function mostrarTareaDetalle()
+  {
+    if(isset($_GET["id_tarea"])){
+      $id_tarea = $_GET["id_tarea"];
+      $fila = $this->modelo->GetTarea($id_tarea);
+      $this->vista->mostrarTareaDetalle($fila);
+    }
+  }
 }
 
 

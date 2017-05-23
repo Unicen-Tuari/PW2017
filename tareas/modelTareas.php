@@ -36,6 +36,14 @@ class ModelTareas
     $sentencia = $this->db->prepare("UPDATE tarea SET terminada=true WHERE id_tarea=?");
     $sentencia->execute(array($id_tarea));
   }
+
+  function GetTarea($id_tarea)
+  {
+    $consulta = $this->db->prepare("SELECT * FROM tarea WHERE id_tarea = ?");
+    $result = $consulta->execute(array($id_tarea));
+    //Devuelvo una sola porque el WHERE es por la clave primaria
+    return $consulta->fetch();
+  }
 }
 
  ?>

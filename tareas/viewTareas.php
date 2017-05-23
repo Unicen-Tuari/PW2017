@@ -17,6 +17,12 @@ class ViewTareas
     $this->smarty->assign("tareas", $tareas);
     $this->smarty->display('lista_tareas.tpl');
   }
+
+
+  function mostrarTareaDetalle($tarea){
+    $this->smarty->assign("tarea", $tarea);
+    $this->smarty->display('detalle_tarea.tpl');
+  }
 }
 
 
