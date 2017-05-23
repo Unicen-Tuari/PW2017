@@ -15,6 +15,7 @@ class ModelTareas
     $result = $consulta->execute();
     return $consulta->fetchAll();
   }
+
   function InsertarTarea($nombre, $descripcion)
   {
     $consulta = $this->db->prepare("INSERT INTO tarea (nombre, descripcion) ".
@@ -22,6 +23,12 @@ class ModelTareas
     $result = $consulta->execute(array($nombre,$descripcion));
     //muestra errores por pantalla
     //var_dump($consulta->errorInfo());
+  }
+
+  function BorrarTarea($id_tarea)
+  {
+    $sentencia = $this->db->prepare("DELETE FROM tarea WHERE id_tarea=?");
+    $sentencia->execute(array($id_tarea));
   }
 }
 

@@ -36,6 +36,14 @@ class ControllerTareas
     }
     header('Location: index.php');
   }
+
+  function BorrarTarea(){
+    if(isset($_GET["id_tarea"])){
+      $id_tarea = $_GET["id_tarea"];
+      $this->modelo->BorrarTarea($id_tarea);
+    }
+    header('Location: index.php');
+  }
 }
 
 

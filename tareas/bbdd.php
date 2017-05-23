@@ -29,12 +29,6 @@
     //Devuelvo una sola porque el WHERE es por la clave primaria
     return $consulta->fetch();
   }
-  function BorrarTarea($id_tarea)
-  {
-    $db = Conectar();
-    $sentencia = $db->prepare("DELETE FROM tarea WHERE id_tarea=?");
-    $sentencia->execute(array($id_tarea));
-  }
   function TerminarTarea($id_tarea)
   {
     $db = Conectar();
