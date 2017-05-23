@@ -73,10 +73,10 @@ class ControllerTareas
     header('Location: index.php');
   }
 
-  public function mostrarTareaDetalle()
+  public function mostrarTareaDetalle($params)
   {
-    if(isset($_GET["id_tarea"])){
-      $id_tarea = $_GET["id_tarea"];
+    if(isset($params[1])){
+      $id_tarea = $params[1];
       $fila = $this->modelo->GetTarea($id_tarea);
       $this->vista->mostrarTareaDetalle($fila);
     }
