@@ -14,7 +14,7 @@ class ControllerTareas
       $this->modelo = new ModelTareas();
   }
 
-  function mostrarTareas($errores){
+  function mostrarTareas($errores = []){
     $tareas = $this->modelo->GetTareas();
     $tareasAMostrar = array();
     foreach ($tareas as $tarea) {
@@ -56,27 +56,37 @@ class ControllerTareas
     return true;
   }
 
-  function BorrarTarea(){
-    if(isset($_GET["id_tarea"])){
-      $id_tarea = $_GET["id_tarea"];
-      $this->modelo->BorrarTarea($id_tarea);
+  function BorrarTarea($id_tarea){
+    $errores = array();
+    if(isset($id_tarea)){
+      if($this->modelo->GetTarea($id_tarea)){
+        $this->modelo->BorrarTarea($id_tarea);
+      }
+      else{
+          $errores[] = "Error: La tarea no existe";
+      }
     }
-    header('Location: index.php');
+    else {
+      $errores[] = "Error: ID invalido";
+    }
+    $this->mostrarTareas($errores);
   }
 
-  public function TerminarTarea()
+  public function TerminarTarea($id_tarea)
   {
-    if(isset($_GET["id_tarea"])){
-      $id_tarea = $_GET["id_tarea"];
+    $errores = array();
+    if(isset($id_tarea)){
       $this->modelo->TerminarTarea($id_tarea);
     }
-    header('Location: index.php');
+    else {
+      $errores[] = "Error: ID invalido";
+    }
+    $this->mostrarTareas($errores);
   }
 
-  public function mostrarTareaDetalle($params)
+  public function mostrarTareaDetalle($id_tarea)
   {
-    if(isset($params[1])){
-      $id_tarea = $params[1];
+    if(isset($id_tarea)){
       $fila = $this->modelo->GetTarea($id_tarea);
       $this->vista->mostrarTareaDetalle($fila);
     }

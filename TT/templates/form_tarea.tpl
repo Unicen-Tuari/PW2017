@@ -3,7 +3,7 @@
     <div class="panel panel-default">
       <div class="panel-heading">Crear Tarea</div>
       <div class="panel-body">
-        <form class="form-horizontal" action="insertar_tarea.php" method="post">
+        <form class="form-horizontal" action="http://localhost/PW2017/TT/tarea/agregar" method="post">
           <div class="form-group">
             <label class="col-sm-2 control-label">Nombre</label>
             <div class="col-sm-10">

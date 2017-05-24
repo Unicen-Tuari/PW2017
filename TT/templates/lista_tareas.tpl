@@ -10,9 +10,9 @@
               {else}
                 <span>{$tarea['nombre']|upper}</span>
               {/if}
-              <a href="borrar_tarea.php?id_tarea={$tarea['id_tarea']}"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
-              <a href="terminar_tarea.php?id_tarea={$tarea['id_tarea']}"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></a>
-              <a href="detalle_tarea.php?id_tarea={$tarea['id_tarea']}"><span class="glyphicon glyphicon-list" aria-hidden="true"></span></a>
+              <a href="http://localhost/PW2017/TT/tarea/borrar/{$tarea['id_tarea']}"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+              <a href="http://localhost/PW2017/TT/tarea/terminada/{$tarea['id_tarea']}"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></a>
+              <a href="http://localhost/PW2017/TT/tarea/detalle/{$tarea['id_tarea']}"><span class="glyphicon glyphicon-list" aria-hidden="true"></span></a>
         </li>
       {/foreach}
     </ul>
