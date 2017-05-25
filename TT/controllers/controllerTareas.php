@@ -1,7 +1,7 @@
 <?php
-require_once('viewTareas.php');
-require_once('modelTareas.php');
-require_once('modelPalabrasProhibidas.php');
+require_once('views/viewTareas.php');
+require_once('models/modelTareas.php');
+require_once('models/modelPalabrasProhibidas.php');
 
 class ControllerTareas
 {
