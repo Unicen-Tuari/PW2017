@@ -1,0 +1,15 @@
+div{
+    background-color: green;
+    width: 60%;
+    margin: auto;
+    border-top: 40px;
+}
+div.clase1{
+  background-color: yellow;
+  width: 40%;
+  margin:auto;
+}
+p{
+  padding: 40px
+  margin:auto;
+}
